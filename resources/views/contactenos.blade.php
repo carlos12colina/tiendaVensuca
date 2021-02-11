@@ -2,47 +2,12 @@
 
 @section('title','vensuca')
 
-@section('menu')
-    <!-- header bottom -->
-  <div class="header_bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-          <!-- logo start -->
-          <div class="logo"> <a href="it_home.html"><img src="images/logos/eslogan.png" alt="logo" /></a> </div>
-          <!-- logo end -->
-        </div>
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-          <!-- menu start -->
-          <div class="menu_side">
-            <div id="navbar_menu">
-              <ul class="first-ul">
-                <li> <a href="{{ route('inicio') }}">Inicio</a></li>
-                <li><a href="{{ route('nosotros') }}">Sobre nosotros</a></li>
-                <li> <a href="{{ route('servicios') }}">Servicios</a></li>
-                <li> <a>Tienda</a>
-                  <ul>
-                    <li><a href="it_shop.html">Productos</a></li>
-                    <li><a href="it_cart.html">Carrito de compra</a></li>
-                    <li><a href="it_checkout.html">Pago</a></li>
-                  </ul>
-                </li>
-                <li> <a class="active" href="{{ route('contactenos') }}">Contactos</a></li>
-              </ul>
-            </div>
-            <div class="search_icon">
-              <ul>
-                <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- menu end -->
-        </div>
-      </div>
-    </div>
+@section('busqueda')
+  <div class="search_icon">
+    <ul>
+      <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
   </div>
-  <!-- header bottom end -->
-
 @endsection
 
 @section('content')
@@ -112,24 +77,35 @@
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contant_form">
-                <h2 class="text_align_center">Enviar mensaje</h2>
+                <h2 class="text_align_center">Realice sus pedidos por aquí</h2>
+                @if (count($errors) > 0)
+                  <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <ul>
+                      @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
+                  </div>
+                @endif
                 <div class="form_section">
-                  <form class="form_contant" action="index.html">
+                  <form method="post" action="{{route('envioContacto')}}">
+                    @csrf
                     <fieldset>
                     <div class="row">
                       <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <input class="field_custom" placeholder="Nombre" type="text">
+                        <input name="nombre" class="field_custom" placeholder="Nombre" type="text" required>
                       </div>
                       <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <input class="field_custom" placeholder="Teléfono" type="text">
+                        <input name="numero" class="field_custom" placeholder="Teléfono" type="text" required>
                       </div>
                       <div class="field col-lg-12 col-md-6 col-sm-12 col-xs-12">
-                        <input class="field_custom" placeholder="Correo electrónio" type="email">
+                        <input name="correo" class="field_custom" placeholder="Correo electrónio" type="email" required>
                       </div>
                       <div class="field col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <textarea class="field_custom" placeholder="Mensaje"></textarea>
+                        <textarea name="mensaje" class="field_custom" placeholder="Mensaje" required></textarea>
                       </div>
-                      <div class="center"><a class="btn main_bt" href="#">Enviar ahora</a></div>
+                      <button type="submit" class="btn main_bt center">Enviar ahora</button>
                     </div>
                     </fieldset>
                   </form>

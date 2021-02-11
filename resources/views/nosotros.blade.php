@@ -2,47 +2,12 @@
 
 @section('title','vensuca')
 
-@section('menu')
-    <!-- header bottom -->
-  <div class="header_bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-          <!-- logo start -->
-          <div class="logo"> <a href="it_home.html"><img src="images/logos/eslogan.png" alt="logo" /></a> </div>
-          <!-- logo end -->
-        </div>
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-          <!-- menu start -->
-          <div class="menu_side">
-            <div id="navbar_menu">
-              <ul class="first-ul">
-                <li> <a href="{{ route('inicio') }}">Inicio</a></li>
-                <li><a class="active" href="{{ route('nosotros') }}">Sobre nosotros</a></li>
-                <li> <a href="{{ route('servicios') }}">Servicios</a></li>
-                <li> <a>Tienda</a>
-                  <ul>
-                    <li><a href="it_shop.html">Productos</a></li>
-                    <li><a href="it_cart.html">Carrito de compra</a></li>
-                    <li><a href="it_checkout.html">Pago</a></li>
-                  </ul>
-                </li>
-                <li> <a href="{{ route('contactenos') }}">Contactos</a></li>
-              </ul>
-            </div>
-            <div class="search_icon">
-              <ul>
-                <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- menu end -->
-        </div>
-      </div>
-    </div>
+@section('busqueda')
+  <div class="search_icon">
+    <ul>
+      <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
   </div>
-  <!-- header bottom end -->
-
 @endsection
 
 @section('content')
@@ -83,14 +48,24 @@
 	      </div>
 	    </div>
 	    <div class="row about_blog">
-	      <div class="col-lg-6 col-md-6 col-sm-12 about_cont_blog">
-	        <div class="full text_align_left text-justify">
-	          <h3>¿Qué productos vendemos?</h3>
-	          <p> Brindamos una gran variedad de productos que van desde tornillos o arandelas, hasta filtros para camiones, nos aseguramos de que usted pueda recibir el producto justo a la medida que requiere para su proyecto o restauración, además, ofrecemos un servicio de reparación y fabricación de mangueras en nuestro departamento de hidráulica, donde, le ayudaremos con una manguera capaz de soportar el duro trabajo que usted le otorgará.</p>
+	      <div class="col-lg-6 col-md-6 col-sm-12 about_cont_blog ">
+	        <div class="full text_align_left text-justify text-dark">
+	          <h3 class=".text-dark">¿Qué productos vendemos?</h3>
+	          <p class=".text-dark"> Brindamos una gran variedad de productos que van desde tornillos o arandelas, hasta filtros para camiones, nos aseguramos de que usted pueda recibir el producto justo a la medida que requiere para su proyecto o restauración, además, ofrecemos un servicio de reparación y fabricación de mangueras en nuestro departamento de hidráulica, donde, le ayudaremos con una manguera para solventar su situación.</p>
+	          <br>
+	          <h3 class=".text-dark">Misión</h3>
+	          <p class=".text-dark">Es una Empresa líder en la comercialización de  artículos de ferretería en general mecánicos, industriales y navales cuyo norte se encuentra dirigido a la satisfacción de las necesidades de las empresas consumidoras y distribuidoras, grandes y pequeños clientes, vendedores independientes y en fin, todos aquellos interesados en satisfacer sus demandas mediante el ofrecimiento de nuestros productos, garantizándoles los más altos estándares de calidad, y precios competitivos. La meta de nuestro personal consiste en ofrecer una alta confiablidad, asesoría personalizada y una altísima capacitación incesante; contribuyendo de esta manera al mejoramiento del sistema comercial y al desarrollo nacional.</p>
+	          <br>
+	          <h3 class=".text-dark">Visión</h3>
+	          <p class=".text-dark">Está orientada en ser una Empresa líder en importación, comercialización y distribución de tornillos tuercas y afines, tanto en Venezuela como en los mercados de América Latina, donde participa mediante adquisiciones y alianzas estratégicas las cuales aseguran el valor para nuestra empresa y cartera de clientes. "VENSUCA RH 2012, C.A" también, impulsamos la generación y propagación del conocimiento en el área comercial, tecnológica y gerencial en la Tornillería para mantenerse como empresa líder en este campo del tornillo.</p>
 	        </div>
 	      </div>
-	      <div class="col-lg-6 col-md-6 col-sm-12 about_feature_img padding_right_0">
-	        <div class="full text_align_center"> <img class="img-responsive" src="images/it_service/imagen_nosotros.jpg" alt="#" /> </div>
+	      <div class="col-lg-6 col-md-6 col-sm-12 about_feature_img padding_right_0" style="margin-top: 2%">
+	      	<div class="full text_align_center"> <img class="img-responsive rounded-left shadow-lg p-3 mb-5 bg-white " style="border-radius: 20px;"  src="{{ asset('assets/images/it_service/tornillos.jpeg') }}" width="90%" alt="Puerto Cabello" /> </div>
+	      	<div class="full text_align_center"> <img class="img-responsive rounded-left shadow-lg p-3 mb-5 bg-white " style="border-radius: 20px;"  src="{{ asset('assets/images/it_service/imagen_nosotros.jpg') }}" alt="Puerto Cabello" /> </div>
+	        <div class="full text_align_center"> <img class="img-responsive rounded-left shadow-lg p-3 mb-5 bg-white " style="border-radius: 20px;"  src="{{ asset('assets/images/it_service/filtros.jpeg') }}" width="80%" alt="Puerto Cabello" /> </div>
+	        
+	        
 	      </div>
 	    </div>
 	  </div>
